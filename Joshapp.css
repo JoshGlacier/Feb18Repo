@@ -1,0 +1,28 @@
+.QuestionBox {
+    height: 10em;
+    width: 20em;
+    background-color: cornflowerblue;
+    position: relative;
+    margin: auto;
+    width: 50%;
+    height:50%;
+    padding: 10px;
+    top: 30em;
+}
+.Question {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+    text-align: center;
+    margin: auto;
+}
+.inputs {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 11em;
+  padding: 10px;
+  align-items: center;
+}
+.answerbutton {
+    padding-left: 10px;
+}
