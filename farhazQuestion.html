@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Question</title>
+
+        <style>
+        html, body {
+            font-family: sans-serif;
+        }
+        #screen {
+           max-width: 800px;
+           height: 20%;
+           background-color: lightgray;
+           position: absolute;
+           left: 25%;
+           right: 25%;
+           top: 25%;
+           bottom: 25%;
+           border-radius: 25px;
+           box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #container {
+            width: 100%;
+            height: 100%
+            text-align: center;
+            padding-top: 10%;
+            align-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        #result h2 {
+            color: darkblue;
+            text-transform: uppercase;
+        }
+
+        #result h3{
+            color: darkblue;
+        }
+        </style>
+
+    </head>
+    <body>
+        <div id="screen">
+            <dv id="container">
+                <center>
+                <h1 id="question">What comes after A?</h1>
+                <input type="text" id="answer" name="QuestionField" placeholder="Type Answer...">
+                <button onclick="checkAnswer()">Submit!</button>
+                <div id="pic"></div>
+                <div id="result"></div>
+                </center>
+            </dv>
+        </div>
+    </body>
+
+    <script>
+    // var answer = "B";
+    var qnum = 0;
+
+    var questions = [
+        "What comes after A?", 
+        "Is 5 bigger than 4?", 
+        "What is the color of an Apple?"
+    ];
+    var answers = [
+        "B", 
+        "Yes", 
+        "Red"
+    ];
+
+    var data = {
+        qnum:0,
+        questions: [
+            {
+                title: "What comes after A?",
+                answer: "B",
+                bgcolor: "Blue",
+                img: "http:placekitten.com/100/100"
+            },
+            {
+                title: "Is 5 bigger than 4?",
+                answer: "Yes",
+                bgcolor: "Green",
+                img: "http:placekitten.com/200/200"
+            },
+            {
+                title: "What is the color of an Apple?",
+                answer: "Red",
+                bgcolor: "Red",
+                img: "http:placekitten.com/300/300"
+            }
+        ]
+    }
+
+    function start(){
+        //document.querySelector("#question").innerText = questions[qnum];
+        document.querySelector("#question").innerText = data.questions[data.qnum].title;
+        document.body.style.backgroundColor = data.questions[data.qnum].bgcolor;
+        document.querySelector("#pic").innerHTML = "<img src='"+data.questions[data.qnum].img+"'/>";
+    }
+
+    function checkAnswer() {
+        var myInput = document.querySelector("#answer").value;
+        console.log(myInput);
+        if(myInput === data.answer[data.qnum]){
+            document.querySelector("#result").innerHTML = "<h2>Correct!</h2>"
+            nextQ();
+
+            //qnum++;
+            //document.querySelector("#question").innerText = questions[qnum];
+
+        // Change question and answer
+        /*if(qnum === 1){
+            qnum = 2;
+            document.querySelector("#question").innerText = "Is 5 bigger than 4?"
+            answer = "Yes";
+        } else if(qnum === 2){
+            qnum = 3;
+            document.querySelector("#question").innerText = "What is the color of an Apple?"
+            answer = "Red";
+        }*/
+        } else if(myInput === ""){
+            document.querySelector("#result").innerHTML = "<h3>You didn't type anything</h3>"
+        } else {
+            document.querySelector("#result").innerHTML = "<h2>Incorrect!</h2>"
+        }
+    }
+
+    function nextQ(){
+        data.qnum++;
+        document.querySelector("#question").innerText = data.questions[data.qnum].title;
+        document.body.style.backgroundColor = data.questions[data.qnum].bgcolor;
+        document.querySelector("#question").innerHTML = "<img src=''"+data.questions[data.qnum].img+"'/>";
+        }
+
+    start();
+    </script>
+
+</html>
