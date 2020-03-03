@@ -57,3 +57,16 @@ body {
     margin-top: 30px;
 
 }
+
+#healthBar {
+    border: solid black 2px;
+    width: 400px;
+    height: 30px; 
+}
+
+#fill {
+    background-color: palegreen;
+    width: 100%; 
+    height: 100%;
+    margin-top: -16px;;
+}

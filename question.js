@@ -47,7 +47,7 @@ function Start(){
 function Check() {
     var myInput = document.querySelector("#anwser").value;
     console.log(myInput);
-    if(myInput === answers[qnum]) {
+    if(myInput === answers[data.qnum]) {
         document.querySelector("#Emma").innerHTML = "<h1>CORRECT!</h1>";
         document.querySelector("#Emma").style.color = "purple";
         NextQ()
@@ -68,6 +68,7 @@ function Check() {
 
     } else {
         document.querySelector("#Emma").innerHTML = "<h1>WRONG!!!!!!!!!!!!!</h1>"
+        health(); 
         document.querySelector("#Emma").style.color = "red"
     }
 }
@@ -82,3 +83,15 @@ function NextQ() {
 
 
 Start(); 
+
+// below: tells the js that the width in the css is equal to 100. you can call the "a" and "width" anything you want, as long as it is consistant 
+var a = {width:100};
+
+function health() {
+    // below: basically saying that the state = bar - 20% each time 
+    a.width = a.width - 20;
+    // below: fill = width + -20%
+    document.querySelector("#fill").style.width = a.width + "%"; 
+    document.querySelector("#fill").style.transition = "0.6s"
+    console.log("fill"); 
+}
