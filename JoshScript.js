@@ -1,3 +1,6 @@
+var state = {
+    name:""
+}
 var data = {
     qnum:0,
     questions:[
@@ -55,6 +58,7 @@ function CheckAnswer(){
     console.log(myInp);
     if(myInp === data.questions[data.qnum].answer){
         document.querySelector("#josh_r").innerHTML = "<h1>Correct! :)</h1>";
+        ChangeName()
         NextQ()
       /*  if(qnum ===1){
         document.querySelector(".Question h1").innerText = "Is 5 bigger than 4?";
@@ -69,6 +73,7 @@ function CheckAnswer(){
       */  
     } else {
         document.querySelector("#josh_r").innerHTML = "<h1>WRONG! >:(</h1>"
+        LoseHealth();
     }
 }
 
@@ -79,6 +84,11 @@ document.body.style.backgroundColor = data.questions[data.qnum].bgcolour;
 document.querySelector("#josh_r").innerHTML = "<img src='"+data.questions[data.qnum].img+"' />";
 
 }
+function ChangeName() {
+    state.name = document.querySelector("#answer").value;
+    console.log(state);
 
+    document.querySelector("#InnerText").innerText = "Good Job " + state.name;
+    }
 
 Start()

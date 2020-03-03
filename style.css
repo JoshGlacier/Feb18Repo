@@ -1,0 +1,17 @@
+#HealthMenu {
+    position: relative;
+    width: 14em;
+    height:2em;
+    border: 1px solid black;
+    left: 5em;
+    top: 2em;
+
+}
+#HealthBar {
+    position: relative;
+    width: 14em;
+    height:2em;
+    background-color: tomato;
+    transition: 1s;
+    
+}

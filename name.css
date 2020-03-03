@@ -1,0 +1,18 @@
+.NameButton {
+    width: 5em;
+    height:2em;
+    background-color: aquamarine;
+}
+#elements {
+    border: 1px solid black;
+    width: 12em;
+    position: relative;
+    top: 0em;
+    left:19em;
+}
+#InnerText {
+    height: 10em;
+    width: 20em;
+    padding: 10px;
+    top: 30em;
+}
